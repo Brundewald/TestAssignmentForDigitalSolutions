@@ -13,11 +13,13 @@ namespace TestAssingment.Controllers
         private Button _exitButton;
         private Button _sellButton;
         private Button _mixButton;
+        private Button _emptyVileButton;
 
         public event Action OnButtonSellPressed;
         public event Action OnMixButtonPressed;
+        public event Action OnEmptyVilePressed;
         public event Action<ButtonTokenEnum> OnButtonPressed;
-        public event Action<KeyCode> OnElementFound;
+        public event Action<int> OnElementFound;
 
         public PlayerInputHandler(HUDInitializer hudInitializer)
         {
@@ -40,6 +42,7 @@ namespace TestAssingment.Controllers
             _exitButton = hudInitializer.ExitToMainMenuButton;
             _sellButton = hudInitializer.SellButton;
             _mixButton = hudInitializer.MixButton;
+            _emptyVileButton = hudInitializer.EmptyVileButton;
         }
 
         private void SubscribeEvents()
@@ -47,6 +50,7 @@ namespace TestAssingment.Controllers
             _exitButton.onClick.AddListener(ExitButtonPressed);
             _sellButton.onClick.AddListener(SellButtonPressed);
             _mixButton.onClick.AddListener(MixButtonPressed);
+            _emptyVileButton.onClick.AddListener(EmptyVile);
         }
 
         private void UnsubscribeEvents()
@@ -54,6 +58,12 @@ namespace TestAssingment.Controllers
             _exitButton.onClick.RemoveAllListeners();
             _sellButton.onClick.RemoveAllListeners();
             _mixButton.onClick.RemoveAllListeners();
+            _emptyVileButton.onClick.RemoveAllListeners();
+        }
+
+        private void EmptyVile()
+        {
+            OnEmptyVilePressed?.Invoke();
         }
 
         private void MixButtonPressed()
@@ -78,15 +88,19 @@ namespace TestAssingment.Controllers
         
         private void KeysHandle()
         {
-            var getKeyA = Input.GetKeyDown(KeyCode.A);
-            var getKeyS = Input.GetKeyDown(KeyCode.S);
+            var getKey1 = Input.GetKeyDown(KeyCode.Keypad1)||Input.GetKeyDown(KeyCode.Alpha1);
+            var getKey2 = Input.GetKeyDown(KeyCode.Keypad2)||Input.GetKeyDown(KeyCode.Alpha2);
+            var getKey3 = Input.GetKeyDown(KeyCode.Keypad3)||Input.GetKeyDown(KeyCode.Alpha3);
             var getEsc = Input.GetButtonDown(ButtonNames.Cancel);
+            
             if (getEsc) 
                 OnButtonPressed?.Invoke(ButtonTokenEnum.Default);
-            if (getKeyA)
-                OnElementFound?.Invoke(KeyCode.A);
-            if (getKeyS)
-                OnElementFound?.Invoke(KeyCode.S);
+            if (getKey1)
+                OnElementFound?.Invoke(0);
+            if (getKey2)
+                OnElementFound?.Invoke(1);
+            if (getKey3)
+                OnElementFound?.Invoke(2);
         }
     }
 }

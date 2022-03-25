@@ -16,6 +16,7 @@ public class HUDInitializer: IController, IDisposable
     private Button _sellButton;
     private Button _exitToMainMenuButton;
     private Button _mixButton;
+    private Button _emptyVileButton;
     private GameObject _gameHUD;
     private Camera _camera;
 
@@ -23,10 +24,9 @@ public class HUDInitializer: IController, IDisposable
     public Transform SecondElementParent => _secondElementParent;
     public Transform ResultElementParent => _resultElementParent;
     public Button SellButton => _sellButton;
-
     public Button MixButton => _mixButton;
     public Button ExitToMainMenuButton => _exitToMainMenuButton;
-
+    public Button EmptyVileButton => _emptyVileButton;
     public HUDInitializer(ReferenceHolder referenceHolder)
     {
         CreateHUD(referenceHolder.GameHUD);
@@ -40,6 +40,11 @@ public class HUDInitializer: IController, IDisposable
         _scoreHolder = gameHUDView.ScoreField;
         GetParents(gameHUDView);
         GetButtons(gameHUDView);
+        GetCamera(gameHUDView);
+    }
+
+    private void GetCamera(GameHUDView gameHUDView)
+    {
         _camera = gameHUDView.CameraHUD;
         _camera.transform.SetParent(_parent);
     }
@@ -56,11 +61,12 @@ public class HUDInitializer: IController, IDisposable
         _sellButton = gameHUDView.SellButton;
         _exitToMainMenuButton = gameHUDView.ExitToMainMenuButton;
         _mixButton = gameHUDView.MixButton;
+        _emptyVileButton = gameHUDView.EmptyVileButton;
     }
 
     public void Dispose()
     {
         Object.Destroy(_gameHUD);
-        Object.Destroy(_camera);
+        Object.Destroy(_camera.gameObject);
     }
 }

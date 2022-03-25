@@ -14,6 +14,7 @@ namespace TestAssingment.View
         [SerializeField] private Button _sellButton;
         [SerializeField] private Button _exitToMainMenuButton;
         [SerializeField] private Button _mixButton;
+        [SerializeField] private Button _emptyVileButton;
         [SerializeField] private Camera _cameraHUD;
 
         public TextMeshProUGUI ScoreField => _scoreField;
@@ -23,6 +24,7 @@ namespace TestAssingment.View
         public Button SellButton => _sellButton;
         public Button ExitToMainMenuButton => _exitToMainMenuButton;
         public Button MixButton => _mixButton;
+        public Button EmptyVileButton => _emptyVileButton;
         public Camera CameraHUD => _cameraHUD;
         
     }

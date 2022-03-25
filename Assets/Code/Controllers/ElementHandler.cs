@@ -42,6 +42,7 @@ namespace TestAssingment.Controllers
             _playerInputHandler.OnButtonSellPressed += SellElement;
             _playerInputHandler.OnElementFound += ElementSpawnTesting;
             _playerInputHandler.OnMixButtonPressed += CheckRecipe;
+            _playerInputHandler.OnEmptyVilePressed += EmptyVile;
         }
         
         private void UnsubscribeEvents()
@@ -49,24 +50,17 @@ namespace TestAssingment.Controllers
             _playerInputHandler.OnButtonSellPressed -= SellElement;
             _playerInputHandler.OnElementFound -= ElementSpawnTesting;
             _playerInputHandler.OnMixButtonPressed -= CheckRecipe;
+            _playerInputHandler.OnEmptyVilePressed -= EmptyVile;
         }
 
-        private void ElementSpawnTesting(KeyCode keyCode)
+        private void ElementSpawnTesting(int index)
         {
-            var randomIndex = Random.Range(0, 2);
-            if(keyCode.Equals(KeyCode.A))
-            {
-                SpawnElement(randomIndex);
-            }
-            else if (keyCode.Equals(KeyCode.S))
-            {
-                SpawnElement(randomIndex);
-            }
+            SpawnElement(index);
         }
 
         private void SpawnElement(int index)
         {
-            if (_firstElement != null&& _secondElement!=null) return;
+            if (_firstElement != null && _secondElement != null) return;
             var elementToSpawn = _elementsHolder.Elements[index];
             var element = _elementFactory.CreateElement(elementToSpawn);
             if (_firstElement is null)
@@ -79,17 +73,25 @@ namespace TestAssingment.Controllers
         {
             if(_resultElement is null && _firstElement !=null && _secondElement != null)
             {
-                foreach (var recipe in _recipeHolder.Recipies)
+                
+                var firstElementToFind = _firstElement.ElementStruct.Name;
+                var secondElementToFind = _secondElement.ElementStruct.Name;
+                var elementsTheSame = firstElementToFind.Equals(secondElementToFind);
+                
+                Debug.Log($"{firstElementToFind} {secondElementToFind}");
+                
+                if(!elementsTheSame)
                 {
-                    var firstElementToFind = _firstElement.ElementStruct.Name;
-                    var secondElementToFind = _secondElement.ElementStruct.Name;
-                    Debug.Log($"{firstElementToFind} {secondElementToFind}");
-                    var firstIngredientCheck = recipe.FirstElement.Name.Equals(firstElementToFind) || recipe.SecondElement.Name.Equals(firstElementToFind);
-                    var secondIngredientCheck = recipe.SecondElement.Name.Equals(secondElementToFind) || recipe.FirstElement.Name.Equals(secondElementToFind);
-
-                    if (firstIngredientCheck && secondIngredientCheck)
+                    foreach (var recipe in _recipeHolder.Recipies)
                     {
+                        var firstIngredientCheck = recipe.FirstElement.Name.Equals(firstElementToFind)||recipe.SecondElement.Name.Equals(firstElementToFind);
+                        var secondIngredientCheck = recipe.SecondElement.Name.Equals(secondElementToFind)||recipe.FirstElement.Name.Equals(secondElementToFind);
+
+                        Debug.Log($"{firstIngredientCheck} {secondIngredientCheck}");
+
+                        if (!firstIngredientCheck || !secondIngredientCheck) continue;
                         MixElements(recipe);
+                        return;
                     }
                 }
             }
@@ -109,6 +111,12 @@ namespace TestAssingment.Controllers
                 Debug.Log($"{_resultElement.ElementStruct.Name} sold");
                 _resultElement = _elementFactory.DestroyElement(_resultElement);
             }
+        }
+
+        private void EmptyVile()
+        {
+            _firstElement = _elementFactory.DestroyElement(_firstElement);
+            _secondElement = _elementFactory.DestroyElement(_secondElement);
         }
     }
 }
