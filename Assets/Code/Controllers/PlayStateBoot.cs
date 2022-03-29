@@ -21,11 +21,15 @@ namespace TestAssingment.Controllers
             var hudInitializer = new HUDInitializer(_referenceHolder);
             var playerInputHandler = new PlayerInputHandler(hudInitializer);
             var buttonActionHandler = new ButtonActionHandler(playerInputHandler, _gameStateHandler);
-            var elementHandler = new ElementHandler(_referenceHolder, hudInitializer, playerInputHandler);
+            var imageTrackingHandler = new ImageTrackingHandler(_referenceHolder);
+            var elementHandler = new ElementHandler(_referenceHolder, hudInitializer, playerInputHandler, imageTrackingHandler);
+            var scoreCountHolder = new ScoreCountHolder(hudInitializer, elementHandler);
             _controllers.Add(hudInitializer);
             _controllers.Add(playerInputHandler);
             _controllers.Add(buttonActionHandler);
+            _controllers.Add(imageTrackingHandler);
             _controllers.Add(elementHandler);
+            _controllers.Add(scoreCountHolder);
         }
 
         public void ExitState()

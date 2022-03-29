@@ -1,14 +1,12 @@
 ﻿using System;
 using Assets.Code.Interfaces;
-using TestAssingment.Data;
 using TestAssingment.Enum;
 using TestAssingment.Interfaces;
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace TestAssingment.Controllers
 {
-    public class PlayerInputHandler: IButtonHandler, IExecute, IDisposable, ICleanup
+    public sealed class PlayerInputHandler: IButtonHandler, IExecute, IDisposable, ICleanup
     {
         private Button _exitButton;
         private Button _sellButton;
@@ -88,7 +86,7 @@ namespace TestAssingment.Controllers
         
         private void KeysHandle()
         {
-            var getKey1 = Input.GetKeyDown(KeyCode.Keypad1)||Input.GetKeyDown(KeyCode.Alpha1);
+            /*var getKey1 = Input.GetKeyDown(KeyCode.Keypad1)||Input.GetKeyDown(KeyCode.Alpha1);
             var getKey2 = Input.GetKeyDown(KeyCode.Keypad2)||Input.GetKeyDown(KeyCode.Alpha2);
             var getKey3 = Input.GetKeyDown(KeyCode.Keypad3)||Input.GetKeyDown(KeyCode.Alpha3);
             var getEsc = Input.GetButtonDown(ButtonNames.Cancel);
@@ -100,7 +98,7 @@ namespace TestAssingment.Controllers
             if (getKey2)
                 OnElementFound?.Invoke(1);
             if (getKey3)
-                OnElementFound?.Invoke(2);
+                OnElementFound?.Invoke(2);*/
         }
     }
 }

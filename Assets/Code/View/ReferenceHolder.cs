@@ -1,5 +1,6 @@
 ﻿using TestAssingment.Data;
 using UnityEngine;
+using UnityEngine.XR.ARFoundation;
 
 namespace TestAssingment.View
 {
@@ -10,6 +11,7 @@ namespace TestAssingment.View
         [SerializeField] private RecipeHolder _recipeHolder;
         [SerializeField] private ElementsHolder _elementsHolder;
         [SerializeField] private Transform _parent;
+        [SerializeField] private ARTrackedImageManager _arTrackedImageManager;
         
         
         public GameObject MainMenuPrefab => _mainMenuPrefab;
@@ -17,5 +19,7 @@ namespace TestAssingment.View
         public RecipeHolder RecipeHolder => _recipeHolder;
         public ElementsHolder ElementsHolder => _elementsHolder;
         public Transform Parent => _parent;
+
+        public ARTrackedImageManager ARTrackedImageManager => _arTrackedImageManager;
     }   
 }

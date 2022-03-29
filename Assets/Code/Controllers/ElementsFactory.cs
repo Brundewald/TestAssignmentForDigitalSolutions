@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace TestAssingment.Controllers
 {
-    public class ElementsFactory
+    public sealed class ElementsFactory
     {
         private readonly Transform _firstElementParent;
         private readonly Transform _secondElementParent;

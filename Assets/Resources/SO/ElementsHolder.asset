@@ -20,5 +20,8 @@ MonoBehaviour:
     Name: Water
     Element: {fileID: 1856159666890495875, guid: 1cb1bb594056fed4aa7dd9d53e63f77d, type: 3}
   - ElementTag: 1
-    Name: Sand
+    Name: Earth
     Element: {fileID: 7552085606957609202, guid: 9122a270db8f3154f8796be2f42a1938, type: 3}
+  - ElementTag: 1
+    Name: Fire
+    Element: {fileID: 502123615891643627, guid: a0d093f2122d72e4ba7a513a83c04688, type: 3}

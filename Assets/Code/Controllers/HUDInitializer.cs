@@ -20,6 +20,7 @@ public class HUDInitializer: IController, IDisposable
     private GameObject _gameHUD;
     private Camera _camera;
 
+    public TextMeshProUGUI ScoreHolder => _scoreHolder;
     public Transform FirstElementParent => _firstElementParent;
     public Transform SecondElementParent => _secondElementParent;
     public Transform ResultElementParent => _resultElementParent;
@@ -27,6 +28,8 @@ public class HUDInitializer: IController, IDisposable
     public Button MixButton => _mixButton;
     public Button ExitToMainMenuButton => _exitToMainMenuButton;
     public Button EmptyVileButton => _emptyVileButton;
+    
+    
     public HUDInitializer(ReferenceHolder referenceHolder)
     {
         CreateHUD(referenceHolder.GameHUD);
