@@ -9,5 +9,6 @@ namespace TestAssingment.Data
         public ElementStruct SecondElement;
         public ElementStruct Result;
         public float Cost;
+        public int ElementCount;
     }
 }

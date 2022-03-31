@@ -19,10 +19,17 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@4.1.9/Runtime/AR/ARUpdateOrder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@4.1.9/Runtime/AR/ARInputManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@4.1.9/Runtime/AR/ARSession.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arsubsystems@4.1.9/Runtime/ImageTrackingSubsystem/XRTrackedImage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@4.1.9/Runtime/AR/ARTrackedImage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@4.1.9/Runtime/AR/ARTrackedImagesChangedEventArgs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.8/Editor/MenuUtils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@4.1.9/Runtime/AR/ARPoseDriver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@4.1.9/Runtime/AR/ARTrackedImageManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arcore@4.1.9/Editor/ARCoreBuildProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@4.1.9/Runtime/AR/ARRaycast.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="26rZUT86e6zNkB0JsscMD4cwDXf" />
   <component name="ProjectViewState">
@@ -46,6 +53,9 @@
       <workItem from="1648183687677" duration="3263000" />
       <workItem from="1648293370458" duration="6363000" />
       <workItem from="1648385919722" duration="16861000" />
+      <workItem from="1648533430362" duration="11479000" />
+      <workItem from="1648553380329" duration="39037000" />
+      <workItem from="1648701151029" duration="5592000" />
     </task>
     <servers />
   </component>

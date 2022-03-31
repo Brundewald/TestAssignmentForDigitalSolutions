@@ -10,5 +10,6 @@ namespace TestAssingment.Data
         public TagEnum ElementTag;
         public string Name;
         public GameObject Element;
+        public Sprite ElementSprite;
     }
 }

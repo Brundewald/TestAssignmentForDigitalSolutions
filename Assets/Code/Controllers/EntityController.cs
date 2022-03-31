@@ -6,11 +6,10 @@ namespace TestAssingment.Controllers
 {
     public sealed class EntityController
     {
-        private readonly ControllersProxy _controllers;
-        private readonly ReferenceHolder _prefabesReferenceHolder;
         private readonly DefaultStateBoot _defaultStateBoot;
         private readonly PlayStateBoot _playStateBoot;
         private readonly GameStateHandler _gameStateHandler;
+        private readonly WinStateBoot _winStateBoot;
         private IGameState _activeState;
 
         public EntityController(ControllersProxy controllers,
@@ -19,6 +18,7 @@ namespace TestAssingment.Controllers
             _gameStateHandler = new GameStateHandler();
             _defaultStateBoot = new DefaultStateBoot(_gameStateHandler, controllers, referenceHolder);
             _playStateBoot = new PlayStateBoot(_gameStateHandler, controllers, referenceHolder);
+            _winStateBoot = new WinStateBoot(_gameStateHandler, controllers, referenceHolder);
         }
 
         public void Init()
@@ -41,6 +41,9 @@ namespace TestAssingment.Controllers
                     break;
                 case GameStates.Play:
                     SwitchState(_playStateBoot);
+                    break;
+                case GameStates.Win:
+                    SwitchState(_winStateBoot);
                     break;
             }
         }

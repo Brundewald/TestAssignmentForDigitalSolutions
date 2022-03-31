@@ -5,12 +5,9 @@ namespace TestAssingment.View
 {
     public class ElementView: MonoBehaviour
     {
-        private ElementStruct _elementStruct;
+        [SerializeField] private MeshRenderer _meshRenderer;
 
-        public ElementStruct ElementStruct
-        {
-            get => _elementStruct;
-            set => _elementStruct = value;
-        }
+        public MeshRenderer MeshRenderer => _meshRenderer;
+        public ElementStruct ElementStruct { get; set; }
     }
 }

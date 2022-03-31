@@ -12,9 +12,8 @@ namespace TestAssingment.Controllers
             switch (gameStates)
             {
                 case GameStates.Default:
-                case GameStates.Settings:
                 case GameStates.Play:
-                case GameStates.Pause:
+                case GameStates.Win:
                     OnStateChange?.Invoke(gameStates);
                     break;
             }

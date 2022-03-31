@@ -1,6 +1,5 @@
 ﻿using System;
 using Assets.Code.Interfaces;
-using JetBrains.Annotations;
 using TestAssingment.Enum;
 using TestAssingment.Interfaces;
 using UnityEditor;
@@ -13,9 +12,10 @@ namespace TestAssingment.Controllers
         private readonly IButtonHandler _menuButtonHandler;
         private readonly GameStateHandler _gameStateHandler;
 
-        public ButtonActionHandler(IButtonHandler menuButtonHandler, GameStateHandler gameStateHandler)
+        public event Action<GameStates> OnGameStateChange;
+        
+        public ButtonActionHandler(IButtonHandler menuButtonHandler)
         {
-            _gameStateHandler = gameStateHandler;
             _menuButtonHandler = menuButtonHandler;
             _menuButtonHandler.OnButtonPressed += ButtonAction;
         }
@@ -34,11 +34,11 @@ namespace TestAssingment.Controllers
         {
             if (buttonPressed.Equals(ButtonTokenEnum.Play))
             {
-                _gameStateHandler.SwitchState(GameStates.Play);
+                OnGameStateChange?.Invoke(GameStates.Play);
             }
             else if (buttonPressed.Equals(ButtonTokenEnum.Default))
             {
-                _gameStateHandler.SwitchState(GameStates.Default);
+                OnGameStateChange?.Invoke(GameStates.Default);
             }
             else if (buttonPressed.Equals(ButtonTokenEnum.Exit))
             {

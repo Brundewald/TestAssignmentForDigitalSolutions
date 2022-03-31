@@ -2,7 +2,6 @@
 using Assets.Code.Interfaces;
 using TestAssingment.Enum;
 using TestAssingment.Interfaces;
-using TestAssingment.View;
 using UnityEngine.UI;
 
 namespace TestAssingment.Controllers
@@ -14,9 +13,9 @@ namespace TestAssingment.Controllers
 
         public event Action<ButtonTokenEnum> OnButtonPressed;
 
-        public MenuButtonHandler(MainMenuView mainMenuView)
+        public MenuButtonHandler(IMenuView menuView)
         {
-            GetButtons(mainMenuView);
+            GetButtons(menuView);
             SubscribeEvents();
         }
 
@@ -52,10 +51,10 @@ namespace TestAssingment.Controllers
             _exitButton.onClick.AddListener(ExitPressed);
         }
 
-        private void GetButtons(MainMenuView mainMenuView)
+        private void GetButtons(IMenuView menuView)
         {
-            _playButton = mainMenuView.PlayButton;
-            _exitButton = mainMenuView.ExitButton;
+            _playButton = menuView.PlayButton;
+            _exitButton = menuView.ExitButton;
         }
     }
 }

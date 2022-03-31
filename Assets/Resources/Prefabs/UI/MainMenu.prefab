@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playButton: {fileID: 6967766760375589127}
   _exitButton: {fileID: 6967766760397704853}
+  _canvas: {fileID: 6967766761162325642}
 --- !u!1 &6967766760000825071
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +548,7 @@ Canvas:
   m_GameObject: {fileID: 6967766761162325646}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0

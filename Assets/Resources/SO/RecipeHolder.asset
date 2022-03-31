@@ -17,51 +17,67 @@ MonoBehaviour:
       ElementTag: 1
       Name: Water
       Element: {fileID: 1856159666890495875, guid: 1cb1bb594056fed4aa7dd9d53e63f77d, type: 3}
+      ElementSprite: {fileID: 21300000, guid: 905aefa8652570842be8659ac40217a5, type: 3}
     SecondElement:
       ElementTag: 1
       Name: Earth
       Element: {fileID: 7552085606957609202, guid: 9122a270db8f3154f8796be2f42a1938, type: 3}
+      ElementSprite: {fileID: 21300000, guid: a3f4461a49e22334fbdf22204209f51d, type: 3}
     Result:
       ElementTag: 2
       Name: Mud
       Element: {fileID: 502123615891643627, guid: 4383a05b40ced684aadcc7c872be2418, type: 3}
-    Cost: 1000
+      ElementSprite: {fileID: 21300000, guid: e0bac1a6e442285499d5717095d7290c, type: 3}
+    Cost: 2400
+    ElementCount: 2
   - FirstElement:
       ElementTag: 1
       Name: Wind
       Element: {fileID: 502123615891643627, guid: f64d608fafcb6964ca1816fdb70739ff, type: 3}
+      ElementSprite: {fileID: 21300000, guid: 39d08c6fe3f2f8e4d9e3eff5f27d4fe7, type: 3}
     SecondElement:
       ElementTag: 1
       Name: Earth
       Element: {fileID: 7552085606957609202, guid: 9122a270db8f3154f8796be2f42a1938, type: 3}
+      ElementSprite: {fileID: 21300000, guid: a3f4461a49e22334fbdf22204209f51d, type: 3}
     Result:
       ElementTag: 2
       Name: Dust
       Element: {fileID: 502123615891643627, guid: 506a31d1a177254438a054c68fdba5e9, type: 3}
-    Cost: 1200
+      ElementSprite: {fileID: 21300000, guid: b4872dcff3a17a240a530f8c43714669, type: 3}
+    Cost: 2400
+    ElementCount: 0
   - FirstElement:
       ElementTag: 1
       Name: Water
       Element: {fileID: 1856159666890495875, guid: 1cb1bb594056fed4aa7dd9d53e63f77d, type: 3}
+      ElementSprite: {fileID: 21300000, guid: 905aefa8652570842be8659ac40217a5, type: 3}
     SecondElement:
       ElementTag: 1
       Name: Wind
       Element: {fileID: 502123615891643627, guid: f64d608fafcb6964ca1816fdb70739ff, type: 3}
+      ElementSprite: {fileID: 21300000, guid: 39d08c6fe3f2f8e4d9e3eff5f27d4fe7, type: 3}
     Result:
       ElementTag: 2
       Name: Mist
       Element: {fileID: 502123615891643627, guid: 320246e48e6df284bab3e3ba54eb889e, type: 3}
-    Cost: 200
+      ElementSprite: {fileID: 21300000, guid: cad492dc6f9a766438b99f4f3897028d, type: 3}
+    Cost: 2400
+    ElementCount: 2
   - FirstElement:
       ElementTag: 1
       Name: Earth
       Element: {fileID: 7552085606957609202, guid: 9122a270db8f3154f8796be2f42a1938, type: 3}
+      ElementSprite: {fileID: 21300000, guid: a3f4461a49e22334fbdf22204209f51d, type: 3}
     SecondElement:
       ElementTag: 1
       Name: Fire
       Element: {fileID: 502123615891643627, guid: f64d608fafcb6964ca1816fdb70739ff, type: 3}
+      ElementSprite: {fileID: 21300000, guid: 8bc6eddd271bcbc4cb29b7e805886aae, type: 3}
     Result:
       ElementTag: 2
       Name: Glass
       Element: {fileID: 7552085606957609202, guid: b6bd7816dc03731439813d4ad435ad5c, type: 3}
-    Cost: 1500
+      ElementSprite: {fileID: 21300000, guid: fea24183072532a419f27d6b302d3f24, type: 3}
+    Cost: 2400
+    ElementCount: 2
